@@ -1,0 +1,30 @@
+<!-- templates/crudapp/index.html -->
+{% extends 'crudapp/base.html' %}
+
+{% block title %}Lista de Productos{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>Lista de productos</h1>
+    <a href="{% url 'crear_item' %}" class="btn btn-primary">Crear nuevo producto</a>
+</div>
+
+{% if items %}
+    <ul class="list-group">
+        {% for item in items %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                    <h5>{{ item.nombre }}</h5>
+                    <p>{{ item.descripcion }}</p>
+                </div>
+                <div>
+                    <a href="{% url 'editar_item' item.pk %}" class="btn btn-warning">Editar</a>
+                    <a href="{% url 'eliminar_item' item.pk %}" class="btn btn-danger">Eliminar</a>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay productos disponibles.</p>
+{% endif %}
+{% endblock %}

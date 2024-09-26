@@ -1,0 +1,13 @@
+<!-- templates/crudapp/eliminar_item.html -->
+{% extends 'crudapp/base.html' %}
+
+{% block title %}Eliminar Producto{% endblock %}
+
+{% block content %}
+<h1>¿Estás seguro que deseas eliminar {{ item.nombre }}?</h1>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a href="{% url 'lista_registros' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}

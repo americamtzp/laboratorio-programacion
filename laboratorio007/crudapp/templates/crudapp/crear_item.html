@@ -1,0 +1,13 @@
+<!-- templates/crudapp/crear_item.html -->
+{% extends 'crudapp/base.html' %}
+
+{% block title %}Crear Producto{% endblock %}
+
+{% block content %}
+<h1>Crear nuevo producto</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+{% endblock %}

@@ -1,0 +1,9 @@
+
+<h1>Crear nuevo item</h1>
+<form method="POST">
+    {% csrf_token %}
+    Nombre: <input type="text" name="nombre"><br>
+    Descripción: <textarea name="descripcion"></textarea><br>
+    <button type="submit">Crear</button>
+</form>
+<a href="{% url 'index' %}">Volver a la lista</a>
