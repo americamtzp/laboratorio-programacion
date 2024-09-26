@@ -1,11 +1,11 @@
 <!-- templates/crudapp/eliminar_item.html -->
 {% extends 'crudapp/base.html' %}
 
-{% block title %}Eliminar Item{% endblock %}
+{% block title %}Eliminar Producto{% endblock %}
 
 {% block content %}
-<h1>Eliminar item</h1>
-<p>¿Estás seguro de que deseas eliminar el item "<strong>{{ item.nombre }}</strong>"?</p>
+<h1>Eliminar producto</h1>
+<p>¿Estás seguro de que deseas eliminar el producto "<strong>{{ item.nombre }}</strong>"?</p>
 
 <form method="POST" class="mt-4">
     {% csrf_token %}

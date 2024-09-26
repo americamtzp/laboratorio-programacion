@@ -1,12 +1,12 @@
 <!-- templates/crudapp/index.html -->
 {% extends 'crudapp/base.html' %}
 
-{% block title %}Lista de Items{% endblock %}
+{% block title %}Lista de Productos{% endblock %}
 
 {% block content %}
 <div class="d-flex justify-content-between align-items-center mb-4">
-    <h1>Lista de Items</h1>
-    <a href="{% url 'crear_item' %}" class="btn btn-primary">Crear nuevo item</a>
+    <h1>Lista de productos</h1>
+    <a href="{% url 'crear_item' %}" class="btn btn-primary">Crear nuevo producto</a>
 </div>
 
 {% if items %}
@@ -25,6 +25,6 @@
         {% endfor %}
     </ul>
 {% else %}
-    <p>No hay items disponibles. <a href="{% url 'crear_item' %}">Agrega uno nuevo</a>.</p>
+    <p>No hay productos disponibles disponibles. <a href="{% url 'crear_item' %}">Agrega uno nuevo</a>.</p>
 {% endif %}
 {% endblock %}
