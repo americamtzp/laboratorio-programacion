@@ -1,0 +1,21 @@
+\<!-- templates/crudapp/crear_item.html -->
+{% extends 'crudapp/base.html' %}
+
+{% block title %}Crear Item{% endblock %}
+
+{% block content %}
+<h1>Crear nuevo item</h1>
+<form method="POST" class="mt-4">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre del item">
+    </div>
+    <div class="mb-3">
+        <label for="descripcion" class="form-label">Descripción</label>
+        <textarea class="form-control" name="descripcion" id="descripcion" rows="3" placeholder="Descripción del item"></textarea>
+    </div>
+    <button type="submit" class="btn btn-success">Crear</button>
+    <a href="{% url 'index' %}" class="btn btn-secondary">Volver a la lista</a>
+</form>
+{% endblock %}

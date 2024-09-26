@@ -1,0 +1,11 @@
+
+<h1>Lista de Items</h1>
+<a href="{% url 'crear_item' %}">Crear nuevo item</a>
+<ul>
+    {% for item in items %}
+        <li>{{ item.nombre }} - {{ item.descripcion }}
+            <a href="{% url 'editar_item' item.id %}">Editar</a>
+            <a href="{% url 'eliminar_item' item.id %}">Eliminar</a>
+        </li>
+    {% endfor %}
+</ul>

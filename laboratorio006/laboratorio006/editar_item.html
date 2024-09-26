@@ -1,0 +1,9 @@
+
+<h1>Editar item</h1>
+<form method="POST">
+    {% csrf_token %}
+    Nombre: <input type="text" name="nombre" value="{{ item.nombre }}"><br>
+    Descripción: <textarea name="descripcion">{{ item.descripcion }}</textarea><br>
+    <button type="submit">Actualizar</button>
+</form>
+<a href="{% url 'index' %}">Volver a la lista</a>

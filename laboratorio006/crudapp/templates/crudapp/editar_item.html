@@ -1,0 +1,21 @@
+<!-- templates/crudapp/editar_item.html -->
+{% extends 'crudapp/base.html' %}
+
+{% block title %}Editar Item{% endblock %}
+
+{% block content %}
+<h1>Editar item</h1>
+<form method="POST" class="mt-4">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" name="nombre" id="nombre" value="{{ item.nombre }}">
+    </div>
+    <div class="mb-3">
+        <label for="descripcion" class="form-label">Descripción</label>
+        <textarea class="form-control" name="descripcion" id="descripcion" rows="3">{{ item.descripcion }}</textarea>
+    </div>
+    <button type="submit" class="btn btn-warning">Actualizar</button>
+    <a href="{% url 'index' %}" class="btn btn-secondary">Volver a la lista</a>
+</form>
+{% endblock %}
