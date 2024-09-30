@@ -1,0 +1,23 @@
+{% extends 'crudapp/base.html' %}
+{% block title %}Crear Proveedor{% endblock %}
+{% block content %}
+<div class="container">
+    <h2 class="mb-4">Crear Proveedor</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre del Proveedor</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" required>
+        </div>
+        <div class="mb-3">
+            <label for="direccion" class="form-label">Dirección</label>
+            <input type="text" class="form-control" id="direccion" name="direccion">
+        </div>
+        <div class="mb-3">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input type="text" class="form-control" id="telefono" name="telefono">
+        </div>
+        <button type="submit" class="btn btn-primary">Crear Proveedor</button>
+    </form>
+</div>
+{% endblock %}

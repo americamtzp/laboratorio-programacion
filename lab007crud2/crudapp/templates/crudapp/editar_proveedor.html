@@ -1,0 +1,23 @@
+{% extends 'crudapp/base.html' %}
+{% block title %}Editar Proveedor{% endblock %}
+{% block content %}
+<div class="container">
+    <h2 class="mb-4">Editar Proveedor</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre del Proveedor</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" value="{{ proveedor.nombre }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="direccion" class="form-label">Dirección</label>
+            <input type="text" class="form-control" id="direccion" name="direccion" value="{{ proveedor.direccion }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input type="text" class="form-control" id="telefono" name="telefono" value="{{ proveedor.telefono }}" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+    </form>
+</div>
+{% endblock %}

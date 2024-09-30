@@ -1,0 +1,13 @@
+{% extends 'crudapp/base.html' %}
+{% block title %}Eliminar Categoría{% endblock %}
+{% block content %}
+<div class="container">
+    <h2 class="mb-4">Eliminar Categoría</h2>
+    <p>¿Estás seguro que deseas eliminar la categoría <strong>{{ categoria.nombre }}</strong>?</p>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a href="{% url 'categoria_list' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}
