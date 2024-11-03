@@ -1,0 +1,27 @@
+<!-- employee_management/templates/employees/register.html -->
+{% extends "base.html" %}
+
+{% block title %}Registrarse{% endblock %}
+
+{% block content %}
+<h2>Registrarse</h2>
+<p>Por favor, completa el siguiente formulario para crear una cuenta. Asegúrate de que las contraseñas coincidan.</p>
+<form method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <input type="text" name="username" placeholder="Nombre de usuario" required>
+    </div>
+    <div class="form-group">
+        <input type="email" name="email" placeholder="Correo electrónico" required>
+    </div>
+    <div class="form-group">
+        <input type="password" name="password" placeholder="Contraseña" required>
+    </div>
+    <div class="form-group">
+        <input type="password" name="confirm_password" placeholder="Confirmar Contraseña" required>
+    </div>
+    <div class="form-group">
+        <button type="submit">Registrarse</button>
+    </div>
+</form>
+{% endblock %}

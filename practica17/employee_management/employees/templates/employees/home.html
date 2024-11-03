@@ -1,0 +1,7 @@
+<!-- templates/employees/home.html -->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Bienvenido a la gestión de empleados</h1>
+  <a href="{% url 'register' %}">Regístrate</a> o <a href="{% url 'login' %}">Inicia sesión</a>
+{% endblock %}

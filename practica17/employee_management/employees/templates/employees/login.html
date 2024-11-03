@@ -1,0 +1,20 @@
+<!-- employee_management/templates/employees/login.html -->
+{% extends "base.html" %}
+
+{% block title %}Iniciar Sesión{% endblock %}
+
+{% block content %}
+<h2>Iniciar Sesión</h2>
+<form method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <input type="text" name="username" placeholder="Nombre de usuario" required>
+    </div>
+    <div class="form-group">
+        <input type="password" name="password" placeholder="Contraseña" required>
+    </div>
+    <div class="form-group">
+        <button type="submit">Iniciar sesión</button>
+    </div>
+</form>
+{% endblock %}

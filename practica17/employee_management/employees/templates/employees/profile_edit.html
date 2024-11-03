@@ -1,0 +1,22 @@
+<!-- employee_management/templates/employees/profile_edit.html -->
+{% extends "base.html" %}
+
+{% block title %}Editar Perfil{% endblock %}
+
+{% block content %}
+<h2>Editar Perfil</h2>
+<form method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <label>Nombre de Usuario</label>
+        <input type="text" name="username" value="{{ user.username }}" required>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" value="{{ user.email }}" required>
+    </div>
+    <div class="form-group">
+        <button type="submit">Guardar Cambios</button>
+    </div>
+</form>
+{% endblock %}

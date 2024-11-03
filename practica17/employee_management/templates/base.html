@@ -1,0 +1,104 @@
+<!-- employee_management/templates/base.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mi Aplicación{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #ffffff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #35424a;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #35424a;
+            color: #ffffff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .form-group {
+            margin: 15px 0;
+        }
+
+        .form-group input {
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-group button {
+            padding: 10px 15px;
+            background: #35424a;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background: #4e636f;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mi Aplicación de Empleados</h1>
+        <nav>
+            <a href="{% url 'home' %}">Inicio</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'profile' %}">Perfil</a>
+                <a href="{% url 'logout' %}">Cerrar sesión</a>
+            {% else %}
+                <a href="{% url 'login' %}">Iniciar sesión</a>
+                <a href="{% url 'register' %}">Registrarse</a>
+            {% endif %}
+        </nav>
+    </header>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <footer>
+        <p>&copy; 2024 Mi Aplicación de Empleados. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
